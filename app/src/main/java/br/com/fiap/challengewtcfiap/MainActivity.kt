@@ -5,12 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
 import br.com.fiap.challengewtcfiap.ui.theme.ChallengewtcfiapTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,29 +16,16 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ChallengewtcfiapTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                // Instancia o controlador de navegação (NavHostController)
+                val navController = rememberNavController()
+
+                Scaffold(modifier = Modifier.fillMaxSize()) { _ ->
+                    // Usa o componente de navegação centralizado
+                    AppNavigation(navController = navController)
                 }
             }
         }
     }
 }
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ChallengewtcfiapTheme {
-        Greeting("Android")
-    }
-}
+// Remova os placeholders OperatorDashboard e ClientDashboard daqui (ou deixe-os no Navigation.kt se preferir)
+// E crie arquivos separados para eles no futuro.
