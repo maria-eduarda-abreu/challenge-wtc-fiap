@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1009373814655",
+    "project_id": "challenge-wtc-fiap",
+    "storage_bucket": "challenge-wtc-fiap.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009373814655:android:557d7b5ce63afc9bc0844a",
+        "android_client_info": {
+          "package_name": "br.com.fiap.challengewtcfiap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbUBaH96UsA2urhvq_MQQ5ySgzo9SpeiA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
