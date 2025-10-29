@@ -5,9 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+
 
 // 1. --- IMPORTS ADICIONADOS ---
 // Importa o seu repositório
@@ -18,6 +18,10 @@ import br.com.fiap.challengewtcfiap.ui.navigation.AppNavigation
 import br.com.fiap.challengewtcfiap.viewmodel.ViewModelFactory
 // Importa seu Tema
 import br.com.fiap.challengewtcfiap.ui.theme.ChallengewtcfiapTheme // Corrigido para o seu nome de tema
+
+import androidx.navigation.compose.rememberNavController
+import br.com.fiap.challengewtcfiap.ui.theme.ChallengewtcfiapTheme
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +36,7 @@ class MainActivity : ComponentActivity() {
         setContent {
 
             ChallengewtcfiapTheme {
+
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 
                     AppNavigation(
@@ -45,3 +50,16 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+                // Instancia o controlador de navegação (NavHostController)
+                val navController = rememberNavController()
+
+                Scaffold(modifier = Modifier.fillMaxSize()) { _ ->
+                    // Usa o componente de navegação centralizado
+                    AppNavigation(navController = navController)
+                }
+            }
+        }
+    }
+}
+// Remova os placeholders OperatorDashboard e ClientDashboard daqui (ou deixe-os no Navigation.kt se preferir)
+// E crie arquivos separados para eles no futuro
